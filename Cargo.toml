@@ -1,0 +1,36 @@
+[package]
+name = "todolist"
+version = "0.1.0"
+authors = ["tuanhuu162 <tuanth.enactusftu@gmail.com>"]
+edition = "2018"
+include = ["src/**/*"]
+
+[lib]
+name = "todolist_lib"
+path = "src/lib.rs"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+actix-web = "4.0.0-beta.6"
+actix-rt = "2.2"
+actix-cors = "0.5"
+actix-session = "0.5.0-beta.1"
+jsonwebtoken = "8.0.0-beta.2"
+pretty_assertions = "0.7"
+regex = "1.5"
+rust-argon2 = "0.8"
+dotenv = "0.15"
+structopt = "0.3"
+log = "0.4"
+uuid = { version = "0.8", features = ["serde", "v4"] }
+env_logger = "0.8"
+serde_json = "1.0"
+diesel = { version = "1.4", features = ["postgres", "r2d2", "chrono", "uuidv07"] }
+chrono = { version = "0.4", features = ["serde"]}
+yarte = "0.15"
+lettre = "0.9"
+native-tls = "0.2"
+[dependencies.serde]
+version = "1.0"
+feature = ["derive"]
