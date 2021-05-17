@@ -61,32 +61,32 @@ impl ResponseError for ToDoError {
             ToDoError::HashError(error) => {
                 println!("{:?}", error);
                 BaseHttpResponse::from(HttpResponse::BadRequest().json(json!({
-                "messege": "Hashing error"
+                "messenge": "Hashing error"
                 })))
             },
             ToDoError::DBError(error) => {
                 println!("{:?}", error);
                 BaseHttpResponse::from(HttpResponse::BadRequest().json(json!({
-                    "messege": "There is some error with databases"
+                    "messenge": "There is some error with databases"
                 })))
             },
             ToDoError::PasswordNotMatch(error) => BaseHttpResponse::from(HttpResponse::BadRequest().json(json!({
-                "messege": error
+                "messenge": error
             }))),
             ToDoError::WrongPassword(error) => BaseHttpResponse::from(HttpResponse::BadRequest().json(json!({
-                "messege": error
+                "messenge": error
             }))),
             ToDoError::BadId => BaseHttpResponse::from(HttpResponse::BadRequest().json(json!({
-                "messege": "Invalid ID"
+                "messenge": "Invalid ID"
             }))),
             ToDoError::DuplicateValue(error) => BaseHttpResponse::from(HttpResponse::BadRequest().json(json!({
-                "messege": error
+                "messenge": error
             }))),
             ToDoError::AuthenticationError(error) => BaseHttpResponse::from(HttpResponse::Unauthorized().json(json!({
-                "messege": error
+                "messenge": error
             }))),
             ToDoError::GenericError(error) => BaseHttpResponse::from(HttpResponse::BadRequest().json(json!({
-                "messege": error
+                "messenge": error
             }))),
         }
     }

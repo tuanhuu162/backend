@@ -114,14 +114,21 @@ impl AuthUser{
 }
 
 impl From<User> for SessionUser {
-    fn from(User{user_id, email, ..} ) -> SessionUser {
-        SessionUser { user_id, email }
+    fn from(user: User) -> SessionUser {
+        SessionUser { 
+            user_id: user.user_id, 
+            email: user.email 
+        }
     }
 }
 
 impl From<User> for RegisterUser {
-    fn from(User{email, name, hash, ..}) -> RegisterUser {
-        RegisterUser { email, name, hash }
+    fn from(user: User) -> RegisterUser {
+        RegisterUser { 
+            email : user.email, 
+            name: user.name, 
+            hash: user.hash
+        }
     }
 }
 
